@@ -1,0 +1,8 @@
+{
+	"SourceFiles": [
+		"/home/tak_0/Documents/Unreal Projects/KBN_Project1/Source/KBN_Project1/KBN_Project1.Build.cs",
+		"/home/tak_0/Documents/Unreal Projects/KBN_Project1/Source/KBN_Project1.Target.cs",
+		"/home/tak_0/Documents/Unreal Projects/KBN_Project1/Source/KBN_Project1Editor.Target.cs"
+	],
+	"EngineVersion": "5.5.3"
+}

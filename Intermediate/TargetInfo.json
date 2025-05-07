@@ -1,0 +1,14 @@
+{
+	"Targets": [
+		{
+			"Name": "KBN_Project1",
+			"Path": "../Source/KBN_Project1.Target.cs",
+			"Type": "Game"
+		},
+		{
+			"Name": "KBN_Project1Editor",
+			"Path": "../Source/KBN_Project1Editor.Target.cs",
+			"Type": "Editor"
+		}
+	]
+}

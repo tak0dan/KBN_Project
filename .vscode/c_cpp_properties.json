@@ -1,0 +1,33 @@
+{
+    "configurations": [
+        {
+            "name": "KBN_Project1Editor Editor Linux Development (KBN_Project1)",
+            "compilerPath": "/opt/unreal-engine/Engine/Extras/ThirdPartyNotUE/SDKs/HostLinux/Linux_x64/v23_clang-18.1.0-rockylinux8/x86_64-unknown-linux-gnu/bin/clang++",
+            "compilerArgs": [
+                "-isysroot",
+                "/opt/unreal-engine/Engine/Extras/ThirdPartyNotUE/SDKs/HostLinux/Linux_x64/v23_clang-18.1.0-rockylinux8/x86_64-unknown-linux-gnu"
+            ],
+            "cStandard": "c17",
+            "cppStandard": "c++20",
+            "intelliSenseMode": "clang-x64",
+            "compileCommands": [
+                "/home/tak_0/Documents/Unreal Projects/KBN_Project1/.vscode/compileCommands_KBN_Project1.json"
+            ]
+        },
+        {
+            "name": "Linux",
+            "compilerPath": "/usr/bin/clang-19",
+            "compilerArgs": [
+                "-isysroot",
+                "/opt/unreal-engine/Engine/Extras/ThirdPartyNotUE/SDKs/HostLinux/Linux_x64/v23_clang-18.1.0-rockylinux8/x86_64-unknown-linux-gnu"
+            ],
+            "cStandard": "c17",
+            "cppStandard": "c++20",
+            "intelliSenseMode": "clang-x64",
+            "compileCommands": [
+                "/home/tak_0/Documents/Unreal Projects/KBN_Project1/.vscode/compileCommands_Default.json"
+            ]
+        }
+    ],
+    "version": 4
+}

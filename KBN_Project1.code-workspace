@@ -1,0 +1,879 @@
+{
+	"folders": [
+		{
+			"name": "KBN_Project1",
+			"path": "."
+		},
+		{
+			"name": "UE5",
+			"path": "/opt/unreal-engine"
+		}
+	],
+	"settings": {
+		"typescript.tsc.autoDetect": "off",
+		"npm.autoDetect": "off",
+		"terminal.integrated.env.linux": {
+			"PATH": "/opt/unreal-engine/Engine/Binaries/ThirdParty/DotNet/8.0.300/linux-x64:${env:PATH}",
+			"DOTNET_ROOT": "/opt/unreal-engine/Engine/Binaries/ThirdParty/DotNet/8.0.300/linux-x64",
+			"DOTNET_HOST_PATH": "/opt/unreal-engine/Engine/Binaries/ThirdParty/DotNet/8.0.300/linux-x64/dotnet",
+			"DOTNET_MULTILEVEL_LOOKUP": "0",
+			"DOTNET_ROLL_FORWARD": "LatestMajor"
+		}
+	},
+	"extensions": {
+		"recommendations": [
+			"ms-vscode.cpptools",
+			"ms-dotnettools.csharp"
+		]
+	},
+	"tasks": {
+		"version": "2.0.0",
+		"tasks": [
+			{
+				"label": "KBN_Project1 Linux Debug Build",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"KBN_Project1",
+					"Linux",
+					"Debug",
+					"/home/tak_0/Documents/Unreal Projects/KBN_Project1/KBN_Project1.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/opt/unreal-engine"
+				}
+			},
+			{
+				"label": "KBN_Project1 Linux Debug Rebuild",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"KBN_Project1",
+					"Linux",
+					"Debug",
+					"/home/tak_0/Documents/Unreal Projects/KBN_Project1/KBN_Project1.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"dependsOn": [
+					"KBN_Project1 Linux Debug Clean"
+				],
+				"type": "shell",
+				"options": {
+					"cwd": "/opt/unreal-engine"
+				}
+			},
+			{
+				"label": "KBN_Project1 Linux Debug Clean",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"KBN_Project1",
+					"Linux",
+					"Debug",
+					"/home/tak_0/Documents/Unreal Projects/KBN_Project1/KBN_Project1.uproject",
+					"-waitmutex",
+					"-clean"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/opt/unreal-engine"
+				}
+			},
+			{
+				"label": "KBN_Project1 Linux DebugGame Build",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"KBN_Project1",
+					"Linux",
+					"DebugGame",
+					"/home/tak_0/Documents/Unreal Projects/KBN_Project1/KBN_Project1.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/opt/unreal-engine"
+				}
+			},
+			{
+				"label": "KBN_Project1 Linux DebugGame Rebuild",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"KBN_Project1",
+					"Linux",
+					"DebugGame",
+					"/home/tak_0/Documents/Unreal Projects/KBN_Project1/KBN_Project1.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"dependsOn": [
+					"KBN_Project1 Linux DebugGame Clean"
+				],
+				"type": "shell",
+				"options": {
+					"cwd": "/opt/unreal-engine"
+				}
+			},
+			{
+				"label": "KBN_Project1 Linux DebugGame Clean",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"KBN_Project1",
+					"Linux",
+					"DebugGame",
+					"/home/tak_0/Documents/Unreal Projects/KBN_Project1/KBN_Project1.uproject",
+					"-waitmutex",
+					"-clean"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/opt/unreal-engine"
+				}
+			},
+			{
+				"label": "KBN_Project1 Linux Development Build",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"KBN_Project1",
+					"Linux",
+					"Development",
+					"/home/tak_0/Documents/Unreal Projects/KBN_Project1/KBN_Project1.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/opt/unreal-engine"
+				}
+			},
+			{
+				"label": "KBN_Project1 Linux Development Rebuild",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"KBN_Project1",
+					"Linux",
+					"Development",
+					"/home/tak_0/Documents/Unreal Projects/KBN_Project1/KBN_Project1.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"dependsOn": [
+					"KBN_Project1 Linux Development Clean"
+				],
+				"type": "shell",
+				"options": {
+					"cwd": "/opt/unreal-engine"
+				}
+			},
+			{
+				"label": "KBN_Project1 Linux Development Clean",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"KBN_Project1",
+					"Linux",
+					"Development",
+					"/home/tak_0/Documents/Unreal Projects/KBN_Project1/KBN_Project1.uproject",
+					"-waitmutex",
+					"-clean"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/opt/unreal-engine"
+				}
+			},
+			{
+				"label": "KBN_Project1 Linux Test Build",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"KBN_Project1",
+					"Linux",
+					"Test",
+					"/home/tak_0/Documents/Unreal Projects/KBN_Project1/KBN_Project1.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/opt/unreal-engine"
+				}
+			},
+			{
+				"label": "KBN_Project1 Linux Test Rebuild",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"KBN_Project1",
+					"Linux",
+					"Test",
+					"/home/tak_0/Documents/Unreal Projects/KBN_Project1/KBN_Project1.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"dependsOn": [
+					"KBN_Project1 Linux Test Clean"
+				],
+				"type": "shell",
+				"options": {
+					"cwd": "/opt/unreal-engine"
+				}
+			},
+			{
+				"label": "KBN_Project1 Linux Test Clean",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"KBN_Project1",
+					"Linux",
+					"Test",
+					"/home/tak_0/Documents/Unreal Projects/KBN_Project1/KBN_Project1.uproject",
+					"-waitmutex",
+					"-clean"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/opt/unreal-engine"
+				}
+			},
+			{
+				"label": "KBN_Project1 Linux Shipping Build",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"KBN_Project1",
+					"Linux",
+					"Shipping",
+					"/home/tak_0/Documents/Unreal Projects/KBN_Project1/KBN_Project1.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/opt/unreal-engine"
+				}
+			},
+			{
+				"label": "KBN_Project1 Linux Shipping Rebuild",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"KBN_Project1",
+					"Linux",
+					"Shipping",
+					"/home/tak_0/Documents/Unreal Projects/KBN_Project1/KBN_Project1.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"dependsOn": [
+					"KBN_Project1 Linux Shipping Clean"
+				],
+				"type": "shell",
+				"options": {
+					"cwd": "/opt/unreal-engine"
+				}
+			},
+			{
+				"label": "KBN_Project1 Linux Shipping Clean",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"KBN_Project1",
+					"Linux",
+					"Shipping",
+					"/home/tak_0/Documents/Unreal Projects/KBN_Project1/KBN_Project1.uproject",
+					"-waitmutex",
+					"-clean"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/opt/unreal-engine"
+				}
+			},
+			{
+				"label": "KBN_Project1 LinuxArm64 Debug Build",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"KBN_Project1",
+					"LinuxArm64",
+					"Debug",
+					"/home/tak_0/Documents/Unreal Projects/KBN_Project1/KBN_Project1.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/opt/unreal-engine"
+				}
+			},
+			{
+				"label": "KBN_Project1 LinuxArm64 Debug Rebuild",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"KBN_Project1",
+					"LinuxArm64",
+					"Debug",
+					"/home/tak_0/Documents/Unreal Projects/KBN_Project1/KBN_Project1.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"dependsOn": [
+					"KBN_Project1 LinuxArm64 Debug Clean"
+				],
+				"type": "shell",
+				"options": {
+					"cwd": "/opt/unreal-engine"
+				}
+			},
+			{
+				"label": "KBN_Project1 LinuxArm64 Debug Clean",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"KBN_Project1",
+					"LinuxArm64",
+					"Debug",
+					"/home/tak_0/Documents/Unreal Projects/KBN_Project1/KBN_Project1.uproject",
+					"-waitmutex",
+					"-clean"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/opt/unreal-engine"
+				}
+			},
+			{
+				"label": "KBN_Project1 LinuxArm64 DebugGame Build",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"KBN_Project1",
+					"LinuxArm64",
+					"DebugGame",
+					"/home/tak_0/Documents/Unreal Projects/KBN_Project1/KBN_Project1.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/opt/unreal-engine"
+				}
+			},
+			{
+				"label": "KBN_Project1 LinuxArm64 DebugGame Rebuild",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"KBN_Project1",
+					"LinuxArm64",
+					"DebugGame",
+					"/home/tak_0/Documents/Unreal Projects/KBN_Project1/KBN_Project1.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"dependsOn": [
+					"KBN_Project1 LinuxArm64 DebugGame Clean"
+				],
+				"type": "shell",
+				"options": {
+					"cwd": "/opt/unreal-engine"
+				}
+			},
+			{
+				"label": "KBN_Project1 LinuxArm64 DebugGame Clean",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"KBN_Project1",
+					"LinuxArm64",
+					"DebugGame",
+					"/home/tak_0/Documents/Unreal Projects/KBN_Project1/KBN_Project1.uproject",
+					"-waitmutex",
+					"-clean"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/opt/unreal-engine"
+				}
+			},
+			{
+				"label": "KBN_Project1 LinuxArm64 Development Build",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"KBN_Project1",
+					"LinuxArm64",
+					"Development",
+					"/home/tak_0/Documents/Unreal Projects/KBN_Project1/KBN_Project1.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/opt/unreal-engine"
+				}
+			},
+			{
+				"label": "KBN_Project1 LinuxArm64 Development Rebuild",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"KBN_Project1",
+					"LinuxArm64",
+					"Development",
+					"/home/tak_0/Documents/Unreal Projects/KBN_Project1/KBN_Project1.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"dependsOn": [
+					"KBN_Project1 LinuxArm64 Development Clean"
+				],
+				"type": "shell",
+				"options": {
+					"cwd": "/opt/unreal-engine"
+				}
+			},
+			{
+				"label": "KBN_Project1 LinuxArm64 Development Clean",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"KBN_Project1",
+					"LinuxArm64",
+					"Development",
+					"/home/tak_0/Documents/Unreal Projects/KBN_Project1/KBN_Project1.uproject",
+					"-waitmutex",
+					"-clean"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/opt/unreal-engine"
+				}
+			},
+			{
+				"label": "KBN_Project1 LinuxArm64 Test Build",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"KBN_Project1",
+					"LinuxArm64",
+					"Test",
+					"/home/tak_0/Documents/Unreal Projects/KBN_Project1/KBN_Project1.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/opt/unreal-engine"
+				}
+			},
+			{
+				"label": "KBN_Project1 LinuxArm64 Test Rebuild",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"KBN_Project1",
+					"LinuxArm64",
+					"Test",
+					"/home/tak_0/Documents/Unreal Projects/KBN_Project1/KBN_Project1.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"dependsOn": [
+					"KBN_Project1 LinuxArm64 Test Clean"
+				],
+				"type": "shell",
+				"options": {
+					"cwd": "/opt/unreal-engine"
+				}
+			},
+			{
+				"label": "KBN_Project1 LinuxArm64 Test Clean",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"KBN_Project1",
+					"LinuxArm64",
+					"Test",
+					"/home/tak_0/Documents/Unreal Projects/KBN_Project1/KBN_Project1.uproject",
+					"-waitmutex",
+					"-clean"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/opt/unreal-engine"
+				}
+			},
+			{
+				"label": "KBN_Project1 LinuxArm64 Shipping Build",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"KBN_Project1",
+					"LinuxArm64",
+					"Shipping",
+					"/home/tak_0/Documents/Unreal Projects/KBN_Project1/KBN_Project1.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/opt/unreal-engine"
+				}
+			},
+			{
+				"label": "KBN_Project1 LinuxArm64 Shipping Rebuild",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"KBN_Project1",
+					"LinuxArm64",
+					"Shipping",
+					"/home/tak_0/Documents/Unreal Projects/KBN_Project1/KBN_Project1.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"dependsOn": [
+					"KBN_Project1 LinuxArm64 Shipping Clean"
+				],
+				"type": "shell",
+				"options": {
+					"cwd": "/opt/unreal-engine"
+				}
+			},
+			{
+				"label": "KBN_Project1 LinuxArm64 Shipping Clean",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"KBN_Project1",
+					"LinuxArm64",
+					"Shipping",
+					"/home/tak_0/Documents/Unreal Projects/KBN_Project1/KBN_Project1.uproject",
+					"-waitmutex",
+					"-clean"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/opt/unreal-engine"
+				}
+			},
+			{
+				"label": "KBN_Project1Editor Linux Debug Build",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"KBN_Project1Editor",
+					"Linux",
+					"Debug",
+					"/home/tak_0/Documents/Unreal Projects/KBN_Project1/KBN_Project1.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/opt/unreal-engine"
+				}
+			},
+			{
+				"label": "KBN_Project1Editor Linux Debug Rebuild",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"KBN_Project1Editor",
+					"Linux",
+					"Debug",
+					"/home/tak_0/Documents/Unreal Projects/KBN_Project1/KBN_Project1.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"dependsOn": [
+					"KBN_Project1Editor Linux Debug Clean"
+				],
+				"type": "shell",
+				"options": {
+					"cwd": "/opt/unreal-engine"
+				}
+			},
+			{
+				"label": "KBN_Project1Editor Linux Debug Clean",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"KBN_Project1Editor",
+					"Linux",
+					"Debug",
+					"/home/tak_0/Documents/Unreal Projects/KBN_Project1/KBN_Project1.uproject",
+					"-waitmutex",
+					"-clean"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/opt/unreal-engine"
+				}
+			},
+			{
+				"label": "KBN_Project1Editor Linux DebugGame Build",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"KBN_Project1Editor",
+					"Linux",
+					"DebugGame",
+					"/home/tak_0/Documents/Unreal Projects/KBN_Project1/KBN_Project1.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/opt/unreal-engine"
+				}
+			},
+			{
+				"label": "KBN_Project1Editor Linux DebugGame Rebuild",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"KBN_Project1Editor",
+					"Linux",
+					"DebugGame",
+					"/home/tak_0/Documents/Unreal Projects/KBN_Project1/KBN_Project1.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"dependsOn": [
+					"KBN_Project1Editor Linux DebugGame Clean"
+				],
+				"type": "shell",
+				"options": {
+					"cwd": "/opt/unreal-engine"
+				}
+			},
+			{
+				"label": "KBN_Project1Editor Linux DebugGame Clean",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"KBN_Project1Editor",
+					"Linux",
+					"DebugGame",
+					"/home/tak_0/Documents/Unreal Projects/KBN_Project1/KBN_Project1.uproject",
+					"-waitmutex",
+					"-clean"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/opt/unreal-engine"
+				}
+			},
+			{
+				"label": "KBN_Project1Editor Linux Development Build",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"KBN_Project1Editor",
+					"Linux",
+					"Development",
+					"/home/tak_0/Documents/Unreal Projects/KBN_Project1/KBN_Project1.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/opt/unreal-engine"
+				}
+			},
+			{
+				"label": "KBN_Project1Editor Linux Development Rebuild",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"KBN_Project1Editor",
+					"Linux",
+					"Development",
+					"/home/tak_0/Documents/Unreal Projects/KBN_Project1/KBN_Project1.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"dependsOn": [
+					"KBN_Project1Editor Linux Development Clean"
+				],
+				"type": "shell",
+				"options": {
+					"cwd": "/opt/unreal-engine"
+				}
+			},
+			{
+				"label": "KBN_Project1Editor Linux Development Clean",
+				"group": "build",
+				"command": "Engine/Build/BatchFiles/Linux/Build.sh",
+				"args": [
+					"KBN_Project1Editor",
+					"Linux",
+					"Development",
+					"/home/tak_0/Documents/Unreal Projects/KBN_Project1/KBN_Project1.uproject",
+					"-waitmutex",
+					"-clean"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "/opt/unreal-engine"
+				}
+			}
+		]
+	},
+	"launch": {
+		"version": "0.2.0",
+		"configurations": [
+			{
+				"name": "Launch KBN_Project1 (Debug)",
+				"request": "launch",
+				"program": "/home/tak_0/Documents/Unreal Projects/KBN_Project1/Binaries/Linux/UnrealGame-Linux-Debug",
+				"preLaunchTask": "KBN_Project1 Linux Debug Build",
+				"args": [
+				],
+				"cwd": "/opt/unreal-engine",
+				"type": "cppdbg",
+				"visualizerFile": "/opt/unreal-engine/Engine/Extras/VisualStudioDebugging/Unreal.natvis",
+				"showDisplayString": true
+			},
+			{
+				"name": "Launch KBN_Project1 (DebugGame)",
+				"request": "launch",
+				"program": "/home/tak_0/Documents/Unreal Projects/KBN_Project1/Binaries/Linux/UnrealGame-Linux-DebugGame",
+				"preLaunchTask": "KBN_Project1 Linux DebugGame Build",
+				"args": [
+				],
+				"cwd": "/opt/unreal-engine",
+				"type": "cppdbg",
+				"visualizerFile": "/opt/unreal-engine/Engine/Extras/VisualStudioDebugging/Unreal.natvis",
+				"showDisplayString": true
+			},
+			{
+				"name": "Launch KBN_Project1 (Development)",
+				"request": "launch",
+				"program": "/home/tak_0/Documents/Unreal Projects/KBN_Project1/Binaries/Linux/UnrealGame",
+				"preLaunchTask": "KBN_Project1 Linux Development Build",
+				"args": [
+				],
+				"cwd": "/opt/unreal-engine",
+				"type": "cppdbg",
+				"visualizerFile": "/opt/unreal-engine/Engine/Extras/VisualStudioDebugging/Unreal.natvis",
+				"showDisplayString": true
+			},
+			{
+				"name": "Launch KBN_Project1 (Test)",
+				"request": "launch",
+				"program": "/home/tak_0/Documents/Unreal Projects/KBN_Project1/Binaries/Linux/UnrealGame-Linux-Test",
+				"preLaunchTask": "KBN_Project1 Linux Test Build",
+				"args": [
+				],
+				"cwd": "/opt/unreal-engine",
+				"type": "cppdbg",
+				"visualizerFile": "/opt/unreal-engine/Engine/Extras/VisualStudioDebugging/Unreal.natvis",
+				"showDisplayString": true
+			},
+			{
+				"name": "Launch KBN_Project1 (Shipping)",
+				"request": "launch",
+				"program": "/home/tak_0/Documents/Unreal Projects/KBN_Project1/Binaries/Linux/UnrealGame-Linux-Shipping",
+				"preLaunchTask": "KBN_Project1 Linux Shipping Build",
+				"args": [
+				],
+				"cwd": "/opt/unreal-engine",
+				"type": "cppdbg",
+				"visualizerFile": "/opt/unreal-engine/Engine/Extras/VisualStudioDebugging/Unreal.natvis",
+				"showDisplayString": true
+			},
+			{
+				"name": "Launch KBN_Project1Editor (Debug)",
+				"request": "launch",
+				"program": "/opt/unreal-engine/Engine/Binaries/Linux/UnrealEditor-Linux-Debug",
+				"preLaunchTask": "KBN_Project1Editor Linux Debug Build",
+				"args": [
+					"/home/tak_0/Documents/Unreal Projects/KBN_Project1/KBN_Project1.uproject"
+				],
+				"cwd": "/opt/unreal-engine",
+				"type": "cppdbg",
+				"visualizerFile": "/opt/unreal-engine/Engine/Extras/VisualStudioDebugging/Unreal.natvis",
+				"showDisplayString": true
+			},
+			{
+				"name": "Launch KBN_Project1Editor (DebugGame)",
+				"request": "launch",
+				"program": "/opt/unreal-engine/Engine/Binaries/Linux/UnrealEditor-Linux-DebugGame",
+				"preLaunchTask": "KBN_Project1Editor Linux DebugGame Build",
+				"args": [
+					"/home/tak_0/Documents/Unreal Projects/KBN_Project1/KBN_Project1.uproject"
+				],
+				"cwd": "/opt/unreal-engine",
+				"type": "cppdbg",
+				"visualizerFile": "/opt/unreal-engine/Engine/Extras/VisualStudioDebugging/Unreal.natvis",
+				"showDisplayString": true
+			},
+			{
+				"name": "Launch KBN_Project1Editor (Development)",
+				"request": "launch",
+				"program": "/opt/unreal-engine/Engine/Binaries/Linux/UnrealEditor",
+				"preLaunchTask": "KBN_Project1Editor Linux Development Build",
+				"args": [
+					"/home/tak_0/Documents/Unreal Projects/KBN_Project1/KBN_Project1.uproject"
+				],
+				"cwd": "/opt/unreal-engine",
+				"type": "cppdbg",
+				"visualizerFile": "/opt/unreal-engine/Engine/Extras/VisualStudioDebugging/Unreal.natvis",
+				"showDisplayString": true
+			},
+			{
+				"name": "Generate Project Files",
+				"type": "coreclr",
+				"request": "launch",
+				"preLaunchTask": "UnrealBuildTool Linux Development Build",
+				"program": "/opt/unreal-engine/Engine/Build/BatchFiles/RunUBT.bat",
+				"args": [
+					"-projectfiles",
+					"-vscode",
+					"-project=/home/tak_0/Documents/Unreal Projects/KBN_Project1/KBN_Project1.uproject",
+					"-game",
+					"-engine",
+					"-dotnet"
+				],
+				"env": {
+					"PATH": "/opt/unreal-engine/Engine/Binaries/ThirdParty/DotNet/8.0.300/linux-x64:${env:PATH}",
+					"DOTNET_ROOT": "/opt/unreal-engine/Engine/Binaries/ThirdParty/DotNet/8.0.300/linux-x64",
+					"DOTNET_HOST_PATH": "/opt/unreal-engine/Engine/Binaries/ThirdParty/DotNet/8.0.300/linux-x64/dotnet",
+					"DOTNET_MULTILEVEL_LOOKUP": "0",
+					"DOTNET_ROLL_FORWARD": "LatestMajor"
+				},
+				"console": "internalConsole",
+				"internalConsoleOptions": "openOnSessionStart",
+				"stopAtEntry": false,
+				"cwd": "/opt/unreal-engine"
+			}
+		]
+	}
+}

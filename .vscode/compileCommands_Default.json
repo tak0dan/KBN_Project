@@ -1,0 +1,106 @@
+[
+	{
+		"file": "/home/tak_0/Documents/Unreal Projects/KBN_Project1/Source/KBN_Project1/KBN_Project1.Build.cs",
+		"arguments": [
+			"/opt/unreal-engine/Engine/Extras/ThirdPartyNotUE/SDKs/HostLinux/Linux_x64/v23_clang-18.1.0-rockylinux8/x86_64-unknown-linux-gnu/bin/clang++",
+			"@/home/tak_0/Documents/Unreal Projects/KBN_Project1/.vscode/compileCommands_Default/KBN_Project1.1.rsp"
+		],
+		"directory": "/opt/unreal-engine/Engine/Source"
+	},
+	{
+		"file": "/home/tak_0/Documents/Unreal Projects/KBN_Project1/Source/KBN_Project1/KBN_Project1.cpp",
+		"arguments": [
+			"/opt/unreal-engine/Engine/Extras/ThirdPartyNotUE/SDKs/HostLinux/Linux_x64/v23_clang-18.1.0-rockylinux8/x86_64-unknown-linux-gnu/bin/clang++",
+			"@/home/tak_0/Documents/Unreal Projects/KBN_Project1/.vscode/compileCommands_Default/KBN_Project1.1.rsp"
+		],
+		"directory": "/opt/unreal-engine/Engine/Source"
+	},
+	{
+		"file": "/home/tak_0/Documents/Unreal Projects/KBN_Project1/Source/KBN_Project1/KBN_Project1.h",
+		"arguments": [
+			"/opt/unreal-engine/Engine/Extras/ThirdPartyNotUE/SDKs/HostLinux/Linux_x64/v23_clang-18.1.0-rockylinux8/x86_64-unknown-linux-gnu/bin/clang++",
+			"@/home/tak_0/Documents/Unreal Projects/KBN_Project1/.vscode/compileCommands_Default/KBN_Project1.1.rsp"
+		],
+		"directory": "/opt/unreal-engine/Engine/Source"
+	},
+	{
+		"file": "/home/tak_0/Documents/Unreal Projects/KBN_Project1/Source/KBN_Project1/KBN_Project1Character.cpp",
+		"arguments": [
+			"/opt/unreal-engine/Engine/Extras/ThirdPartyNotUE/SDKs/HostLinux/Linux_x64/v23_clang-18.1.0-rockylinux8/x86_64-unknown-linux-gnu/bin/clang++",
+			"@/home/tak_0/Documents/Unreal Projects/KBN_Project1/.vscode/compileCommands_Default/KBN_Project1.1.rsp"
+		],
+		"directory": "/opt/unreal-engine/Engine/Source"
+	},
+	{
+		"file": "/home/tak_0/Documents/Unreal Projects/KBN_Project1/Source/KBN_Project1/KBN_Project1Character.h",
+		"arguments": [
+			"/opt/unreal-engine/Engine/Extras/ThirdPartyNotUE/SDKs/HostLinux/Linux_x64/v23_clang-18.1.0-rockylinux8/x86_64-unknown-linux-gnu/bin/clang++",
+			"@/home/tak_0/Documents/Unreal Projects/KBN_Project1/.vscode/compileCommands_Default/KBN_Project1.1.rsp"
+		],
+		"directory": "/opt/unreal-engine/Engine/Source"
+	},
+	{
+		"file": "/home/tak_0/Documents/Unreal Projects/KBN_Project1/Source/KBN_Project1/KBN_Project1GameMode.cpp",
+		"arguments": [
+			"/opt/unreal-engine/Engine/Extras/ThirdPartyNotUE/SDKs/HostLinux/Linux_x64/v23_clang-18.1.0-rockylinux8/x86_64-unknown-linux-gnu/bin/clang++",
+			"@/home/tak_0/Documents/Unreal Projects/KBN_Project1/.vscode/compileCommands_Default/KBN_Project1.1.rsp"
+		],
+		"directory": "/opt/unreal-engine/Engine/Source"
+	},
+	{
+		"file": "/home/tak_0/Documents/Unreal Projects/KBN_Project1/Source/KBN_Project1/KBN_Project1GameMode.h",
+		"arguments": [
+			"/opt/unreal-engine/Engine/Extras/ThirdPartyNotUE/SDKs/HostLinux/Linux_x64/v23_clang-18.1.0-rockylinux8/x86_64-unknown-linux-gnu/bin/clang++",
+			"@/home/tak_0/Documents/Unreal Projects/KBN_Project1/.vscode/compileCommands_Default/KBN_Project1.1.rsp"
+		],
+		"directory": "/opt/unreal-engine/Engine/Source"
+	},
+	{
+		"file": "/home/tak_0/Documents/Unreal Projects/KBN_Project1/Source/KBN_Project1/KBN_Project1PickUpComponent.cpp",
+		"arguments": [
+			"/opt/unreal-engine/Engine/Extras/ThirdPartyNotUE/SDKs/HostLinux/Linux_x64/v23_clang-18.1.0-rockylinux8/x86_64-unknown-linux-gnu/bin/clang++",
+			"@/home/tak_0/Documents/Unreal Projects/KBN_Project1/.vscode/compileCommands_Default/KBN_Project1.1.rsp"
+		],
+		"directory": "/opt/unreal-engine/Engine/Source"
+	},
+	{
+		"file": "/home/tak_0/Documents/Unreal Projects/KBN_Project1/Source/KBN_Project1/KBN_Project1PickUpComponent.h",
+		"arguments": [
+			"/opt/unreal-engine/Engine/Extras/ThirdPartyNotUE/SDKs/HostLinux/Linux_x64/v23_clang-18.1.0-rockylinux8/x86_64-unknown-linux-gnu/bin/clang++",
+			"@/home/tak_0/Documents/Unreal Projects/KBN_Project1/.vscode/compileCommands_Default/KBN_Project1.1.rsp"
+		],
+		"directory": "/opt/unreal-engine/Engine/Source"
+	},
+	{
+		"file": "/home/tak_0/Documents/Unreal Projects/KBN_Project1/Source/KBN_Project1/KBN_Project1Projectile.cpp",
+		"arguments": [
+			"/opt/unreal-engine/Engine/Extras/ThirdPartyNotUE/SDKs/HostLinux/Linux_x64/v23_clang-18.1.0-rockylinux8/x86_64-unknown-linux-gnu/bin/clang++",
+			"@/home/tak_0/Documents/Unreal Projects/KBN_Project1/.vscode/compileCommands_Default/KBN_Project1.1.rsp"
+		],
+		"directory": "/opt/unreal-engine/Engine/Source"
+	},
+	{
+		"file": "/home/tak_0/Documents/Unreal Projects/KBN_Project1/Source/KBN_Project1/KBN_Project1Projectile.h",
+		"arguments": [
+			"/opt/unreal-engine/Engine/Extras/ThirdPartyNotUE/SDKs/HostLinux/Linux_x64/v23_clang-18.1.0-rockylinux8/x86_64-unknown-linux-gnu/bin/clang++",
+			"@/home/tak_0/Documents/Unreal Projects/KBN_Project1/.vscode/compileCommands_Default/KBN_Project1.1.rsp"
+		],
+		"directory": "/opt/unreal-engine/Engine/Source"
+	},
+	{
+		"file": "/home/tak_0/Documents/Unreal Projects/KBN_Project1/Source/KBN_Project1/KBN_Project1WeaponComponent.cpp",
+		"arguments": [
+			"/opt/unreal-engine/Engine/Extras/ThirdPartyNotUE/SDKs/HostLinux/Linux_x64/v23_clang-18.1.0-rockylinux8/x86_64-unknown-linux-gnu/bin/clang++",
+			"@/home/tak_0/Documents/Unreal Projects/KBN_Project1/.vscode/compileCommands_Default/KBN_Project1.1.rsp"
+		],
+		"directory": "/opt/unreal-engine/Engine/Source"
+	},
+	{
+		"file": "/home/tak_0/Documents/Unreal Projects/KBN_Project1/Source/KBN_Project1/KBN_Project1WeaponComponent.h",
+		"arguments": [
+			"/opt/unreal-engine/Engine/Extras/ThirdPartyNotUE/SDKs/HostLinux/Linux_x64/v23_clang-18.1.0-rockylinux8/x86_64-unknown-linux-gnu/bin/clang++",
+			"@/home/tak_0/Documents/Unreal Projects/KBN_Project1/.vscode/compileCommands_Default/KBN_Project1.1.rsp"
+		],
+		"directory": "/opt/unreal-engine/Engine/Source"
+	}
+]
