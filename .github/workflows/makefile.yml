@@ -1,5 +1,5 @@
-name: K_B_N Build Workflow
-version: 1.1
+name: K_B_N Build and Test Workflow
+version: 1.2
 
 # Define directories to ensure they exist
 directories:
@@ -9,6 +9,7 @@ directories:
   - path: KBN_1_prj/K_B_N/Intermediate/Config/CoalescedSourceConfigs
   - path: KBN_1_prj/K_B_N/Saved/Config/LinuxEditor
   - path: KBN_1_prj/K_B_N/Saved/Logs
+  - path: KBN_1_prj/K_B_N/Intermediate/Build/BuildRulesProjects/K_B_NModuleRules
 
 # Define placeholder files to create if they don't exist
 files:
@@ -20,8 +21,15 @@ files:
     content: "[/Script/UnrealEd.EditorSettings]\n# Placeholder editor settings"
   - path: KBN_1_prj/K_B_N/Saved/Logs/K_B_N.log
     content: "# Placeholder log file"
+  - path: KBN_1_prj/K_B_N/Intermediate/Build/BuildRulesProjects/K_B_NModuleRules/K_B_NModuleRules.csproj
+    content: |
+      <Project Sdk="Microsoft.NET.Sdk">
+        <PropertyGroup>
+          <TargetFramework>netstandard2.0</TargetFramework>
+        </PropertyGroup>
+      </Project>
 
-# Tasks to create directories and files
+# Tasks
 tasks:
   setup-directories:
     description: Create necessary directories if they don't exist
@@ -31,6 +39,12 @@ tasks:
             mkdir -p "$dir"
           done
         shell: bash
+      - run: |
+          for dir in "${{ directories[*].path }}"; do
+            New-Item -ItemType Directory -Force -Path "$dir"
+          done
+        shell: pwsh
+        if: runner.os == 'Windows'
 
   setup-files:
     description: Create placeholder files if they don't exist
@@ -43,9 +57,18 @@ tasks:
             fi
           ${{ endfor }}
         shell: bash
+      - run: |
+          ${{ for file in files }}
+            if (-not (Test-Path "${{ file.path }}")) {
+              New-Item -ItemType Directory -Force -Path (Split-Path "${{ file.path }}" -Parent)
+              Set-Content -Path "${{ file.path }}" -Value "${{ file.content }}"
+            }
+          ${{ endfor }}
+        shell: pwsh
+        if: runner.os == 'Windows'
 
   setup-unreal:
-    description: Set up Unreal Engine project files
+    description: Set up Unreal Engine project files (Linux only)
     steps:
       - run: |
           # Ensure Setup.sh is executable and run it to download dependencies
@@ -55,25 +78,57 @@ tasks:
           chmod +x Engine/Build/BatchFiles/Linux/GenerateProjectFiles.sh
           ./Engine/Build/BatchFiles/Linux/GenerateProjectFiles.sh -project="KBN_1_prj/K_B_N/K_B_N.uproject" -game -engine
         shell: bash
+        if: runner.os == 'Linux'
 
   build:
-    description: Run the Unreal Engine build process
+    description: Run the Unreal Engine build process (Linux only)
     needs: [setup-directories, setup-files, setup-unreal]
     steps:
       - run: |
           # Build the K_B_NEditor for Linux
           ./Engine/Build/BatchFiles/Linux/Build.sh K_B_NEditor Linux Development
         shell: bash
+        if: runner.os == 'Linux'
+
+  test-dotnet:
+    description: Run .NET tests for K_B_NModuleRules
+    needs: [setup-directories, setup-files]
+    steps:
+      - run: |
+          dotnet test KBN_1_prj/K_B_N/Intermediate/Build/BuildRulesProjects/K_B_NModuleRules/K_B_NModuleRules.csproj
+        shell: bash
+        env:
+          DOTNET_ROOT: /usr/share/dotnet
+        if: runner.os == 'Linux'
+      - run: |
+          dotnet test KBN_1_prj/K_B_N/Intermediate/Build/BuildRulesProjects/K_B_NModuleRules/K_B_NModuleRules.csproj
+        shell: pwsh
+        env:
+          DOTNET_ROOT: C:\Program Files\dotnet
+        if: runner.os == 'Windows'
 
 # Main workflow
 workflow:
   jobs:
-    build-job:
-      runs-on: ubuntu-latest
+    build-and-test:
+      strategy:
+        matrix:
+          os: [ubuntu-latest, windows-latest]
+      runs-on: ${{ matrix.os }}
       steps:
         - name: Checkout repository
           uses: actions/checkout@v4
+        - name: Setup .NET
+          uses: actions/setup-dotnet@v4
+          with:
+            dotnet-version: '6.0.x' # Adjust based on your project requirements
         - task: setup-directories
         - task: setup-files
         - task: setup-unreal
         - task: build
+        - task: test-dotnet
+      env:
+        Solution_Name: K_B_N
+        Test_Project_Path: KBN_1_prj/K_B_N/Intermediate/Build/BuildRulesProjects/K_B_NModuleRules/K_B_NModuleRules.csproj
+        Wap_Project_Directory: KBN_1_prj/K_B_N/Intermediate/Build/BuildRulesProjects/K_B_NModuleRules
+        Wap_Project_Path: KBN_1_prj/K_B_N/Intermediate/Build/BuildRulesProjects/K_B_NModuleRules/K_B_NModuleRules.csproj
