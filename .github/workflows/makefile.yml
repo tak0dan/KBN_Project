@@ -1,27 +1,64 @@
-name: Makefile CI
+name: K_B_N Build Workflow
+version: 1.0
 
-on:
-  push:
-    branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
+# Define directories to ensure they exist
+directories:
+  - path: KBN_1_prj/K_B_N/Binaries/Linux
+  - path: KBN_1_prj/K_B_N/Intermediate/Build/Linux/x64/K_B_NEditor/Development
+  - path: KBN_1_prj/K_B_N/Intermediate/Build/Linux/x64/UnrealEditor/Development/K_B_N
+  - path: KBN_1_prj/K_B_N/Intermediate/Config/CoalescedSourceConfigs
+  - path: KBN_1_prj/K_B_N/Saved/Config/LinuxEditor
+  - path: KBN_1_prj/K_B_N/Saved/Logs
 
-jobs:
-  build:
+# Define placeholder files to create if they don't exist
+files:
+  - path: KBN_1_prj/K_B_N/Binaries/Linux/K_B_NEditor.target
+    content: "# Placeholder for K_B_NEditor.target"
+  - path: KBN_1_prj/K_B_N/Intermediate/Config/CoalescedSourceConfigs/GameUserSettings.ini
+    content: "[/Script/Engine.GameUserSettings]\n# Placeholder configuration"
+  - path: KBN_1_prj/K_B_N/Saved/Config/LinuxEditor/Editor.ini
+    content: "[/Script/UnrealEd.EditorSettings]\n# Placeholder editor settings"
+  - path: KBN_1_prj/K_B_N/Saved/Logs/K_B_N.log
+    content: "# Placeholder log file"
 
-    runs-on: ubuntu-latest
-
+# Tasks to create directories and files
+tasks:
+  setup-directories:
+    description: Create necessary directories if they don't exist
     steps:
-    - uses: actions/checkout@v4
+      - run: |
+          for dir in "${{ directories[*].path }}"; do
+            mkdir -p "$dir"
+          done
+        shell: bash
 
-    - name: configure
-      run: ./configure
+  setup-files:
+    description: Create placeholder files if they don't exist
+    steps:
+      - run: |
+          ${{ for file in files }}
+            if [ ! -f "${{ file.path }}" ]; then
+              mkdir -p "$(dirname ${{ file.path }})"
+              echo "${{ file.content }}" > "${{ file.path }}"
+            fi
+          ${{ endfor }}
+        shell: bash
 
-    - name: Install dependencies
-      run: make
+  build:
+    description: Run the Unreal Engine build process
+    needs: [setup-directories, setup-files]
+    steps:
+      - run: |
+          # Example Unreal Engine build command (adjust as needed)
+          ./Engine/Build/BatchFiles/Linux/Build.sh K_B_NEditor Linux Development
+        shell: bash
 
-    - name: Run check
-      run: make check
-
-    - name: Run distcheck
-      run: make distcheck
+# Main workflow
+workflow:
+  jobs:
+    build-job:
+      runs-on: linux
+      steps:
+        - task: setup-directories
+        - task: setup-files
+        - task: build
