@@ -1,5 +1,5 @@
 name: K_B_N Build Workflow
-version: 1.0
+version: 1.1
 
 # Define directories to ensure they exist
 directories:
@@ -44,12 +44,24 @@ tasks:
           ${{ endfor }}
         shell: bash
 
-  build:
-    description: Run the Unreal Engine build process
-    needs: [setup-directories, setup-files]
+  setup-unreal:
+    description: Set up Unreal Engine project files
     steps:
       - run: |
-          # Example Unreal Engine build command (adjust as needed)
+          # Ensure Setup.sh is executable and run it to download dependencies
+          chmod +x Engine/Build/BatchFiles/Linux/Setup.sh
+          ./Engine/Build/BatchFiles/Linux/Setup.sh
+          # Generate project files for K_B_N
+          chmod +x Engine/Build/BatchFiles/Linux/GenerateProjectFiles.sh
+          ./Engine/Build/BatchFiles/Linux/GenerateProjectFiles.sh -project="KBN_1_prj/K_B_N/K_B_N.uproject" -game -engine
+        shell: bash
+
+  build:
+    description: Run the Unreal Engine build process
+    needs: [setup-directories, setup-files, setup-unreal]
+    steps:
+      - run: |
+          # Build the K_B_NEditor for Linux
           ./Engine/Build/BatchFiles/Linux/Build.sh K_B_NEditor Linux Development
         shell: bash
 
@@ -57,8 +69,11 @@ tasks:
 workflow:
   jobs:
     build-job:
-      runs-on: linux
+      runs-on: ubuntu-latest
       steps:
+        - name: Checkout repository
+          uses: actions/checkout@v4
         - task: setup-directories
         - task: setup-files
+        - task: setup-unreal
         - task: build
