@@ -1,0 +1,28 @@
+{
+	"configurations": [
+		{
+			"name": "K_B_NEditor Editor Linux Development (K_B_N)",
+			"compilerPath": "/opt/unreal-engine/Engine/Extras/ThirdPartyNotUE/SDKs/HostLinux/Linux_x64/v23_clang-18.1.0-rockylinux8/x86_64-unknown-linux-gnu/bin/clang++",
+			"compilerArgs": [
+				"-isysroot",
+				"/opt/unreal-engine/Engine/Extras/ThirdPartyNotUE/SDKs/HostLinux/Linux_x64/v23_clang-18.1.0-rockylinux8/x86_64-unknown-linux-gnu"
+			],
+			"cStandard": "c17",
+			"cppStandard": "c++20",
+			"intelliSenseMode": "clang-x64",
+			"compileCommands": "/home/tak_0/Documents/Unreal_Projects/KBN_1_prj/K_B_N/.vscode/compileCommands_K_B_N.json"
+		},
+		{
+			"name": "Linux",
+			"compilerPath": "/opt/unreal-engine/Engine/Extras/ThirdPartyNotUE/SDKs/HostLinux/Linux_x64/v23_clang-18.1.0-rockylinux8/x86_64-unknown-linux-gnu/bin/clang++",
+			"compilerArgs": [
+				"-isysroot",
+				"/opt/unreal-engine/Engine/Extras/ThirdPartyNotUE/SDKs/HostLinux/Linux_x64/v23_clang-18.1.0-rockylinux8/x86_64-unknown-linux-gnu"
+			],
+			"cStandard": "c17",
+			"cppStandard": "c++20",
+			"intelliSenseMode": "clang-x64",
+			"compileCommands": "/home/tak_0/Documents/Unreal_Projects/KBN_1_prj/K_B_N/.vscode/compileCommands_Default.json"
+		}
+	]
+}
